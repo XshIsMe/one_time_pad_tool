@@ -21,7 +21,7 @@ def reg_bin_to_str(args):
 def reg_otp_encrypt(args):
     try:
         cipher = otp_encrypt(args.plain, args.key, args.type)
-        print("Cpiher: {cipher}".format(cipher=cipher))
+        print(cipher)
     except Exception as msg:
         print(msg)
 
@@ -29,7 +29,7 @@ def reg_otp_encrypt(args):
 def reg_otp_decrypt(args):
     try:
         plain = otp_decrypt(args.cipher, args.key, args.type)
-        print("Plain: {plain}".format(plain=plain))
+        print(plain)
     except Exception as msg:
         print(msg)
 
