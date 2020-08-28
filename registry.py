@@ -4,8 +4,7 @@ import base64
 
 def reg_str_to_bin(args):
     try:
-        string = args.text
-        binary = str_to_bin(string)
+        binary = str_to_bin(args.text)
         print(binary)
     except Exception as msg:
         print(msg)
@@ -13,8 +12,7 @@ def reg_str_to_bin(args):
 
 def reg_bin_to_str(args):
     try:
-        binary = args.text
-        string = bin_to_str(binary)
+        string = bin_to_str(args.text)
         print(string)
     except Exception as msg:
         print(msg)

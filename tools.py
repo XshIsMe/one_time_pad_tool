@@ -51,8 +51,9 @@ def otp_encrypt(plain, raw_key, encode_type):
     return cipher
 
 
-def otp_decrypt(raw_cipher, key, encode_type):
+def otp_decrypt(raw_cipher, raw_key, encode_type):
     # 根据要求解码
+    key = decode_data(raw_key, encode_type)
     cipher = decode_data(raw_cipher, encode_type)
     # 密文和key的长度需要相同
     assert len(cipher) == len(key), Exception("len(key) != len(cipher)")
