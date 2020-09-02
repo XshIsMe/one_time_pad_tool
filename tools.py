@@ -1,3 +1,4 @@
+import binascii
 import base64
 import random
 import re
@@ -11,8 +12,10 @@ def encode_data(raw_data, encode_type):
         data = str_to_bin(raw_data)
     elif "raw" == encode_type:
         data = raw_data
+    elif "hex" == encode_type:
+        data = binascii.b2a_hex(raw_data.encode()).decode()
     else:
-        raise Exception("type must in [base64, bin, raw]")
+        raise Exception("type must in [base64, bin, raw, hex]")
     return data
 
 
@@ -24,8 +27,10 @@ def decode_data(raw_data, encode_type):
         data = bin_to_str(raw_data)
     elif "raw" == encode_type:
         data = raw_data
+    elif "hex" == encode_type:
+        data = binascii.a2b_hex(raw_data.encode()).decode()
     else:
-        raise Exception("type must in [base64, bin, raw]")
+        raise Exception("type must in [base64, bin, raw, hex]")
     return data
 
 
